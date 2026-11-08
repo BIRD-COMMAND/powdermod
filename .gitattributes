@@ -1,0 +1,65 @@
+# ====================================================================
+# POWDER 118 Baseline - Line Ending & Encoding Manifest
+# ====================================================================
+
+# 1. Default Catch-All: Detect text files automatically, normalize to LF
+* text=auto eol=lf
+
+# 2. Makefiles & Extensionless Build Configurations
+[Mm]akefile* text eol=lf
+*.mk text eol=lf
+
+# 3. Source Code & Headers (C, C++, Objective-C, Java)
+*.c text eol=lf
+*.cpp text eol=lf
+*.h text eol=lf
+*.m text eol=lf
+*.java text eol=lf
+
+# 4. Engine Assets, Maps & Documentation
+*.txt text eol=lf
+*.TXT text eol=lf
+*.map text eol=lf
+*.cfg text eol=lf
+*.inf text eol=lf
+*.building text eol=lf
+
+# 5. Unix, Linux, OS X, and GP2X Shell Scripts
+*.sh text eol=lf
+*.bash text eol=lf
+*.gpe text eol=lf
+*.gp2x.sh text eol=lf
+*.OSX.sh text eol=lf
+
+# 6. IDE, Eclipse & Metadata XML Configurations
+*.xml text eol=lf
+*.plist text eol=lf
+*.classpath text eol=lf
+*.project text eol=lf
+*.properties text eol=lf
+*.prefs text eol=lf
+.cvsignore text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+# 7. Windows-Specific Scripts & Legacy Visual Studio Project Files
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.rc text eol=crlf
+*.sln text eol=crlf
+*.vcproj text eol=crlf
+*.vcp text eol=crlf
+*.vcw text eol=crlf
+
+# 8. Graphics, Icons & Compressed Archives (Strict Binary)
+*.bmp binary
+*.bmp.gz binary
+*.png binary
+*.ico binary
+*.icns binary
+
+# 9. Executables & Standalone Target Binaries (Strict Binary)
+*.exe binary
+*.GP2X binary
+*.LINUX binary
+*.OSX binary
