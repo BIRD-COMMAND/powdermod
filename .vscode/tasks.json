@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Game (Release)",
+      "type": "shell",
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "build_game.bat"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false,
+        "clear": false,
+        "showReuseMessage": false,
+      }
+    },
+    {
+      "label": "Run POWDER",
+      "type": "process",
+      "command": "${workspaceFolder}\\port\\windows\\Release\\Powder.exe",
+      "dependsOn": "Build Game (Release)",
+      "problemMatcher": [],
+    }
+  ]
+}

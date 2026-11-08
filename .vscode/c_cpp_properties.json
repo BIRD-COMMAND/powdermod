@@ -1,0 +1,22 @@
+{
+  "configurations": [
+    {
+      "name": "Win32",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "${workspaceFolder}/port/sdl",
+        "${workspaceFolder}/SDL-1.2.15/include",
+        "${workspaceFolder}/../SDL-1.2.15/include",
+        "C:/SDL-1.2.15/include"
+      ],
+      "defines": [
+        "WIN32",
+        "_CRT_SECURE_NO_WARNINGS"
+      ],
+      "cStandard": "c99",
+      "cppStandard": "c++98",
+      "intelliSenseMode": "windows-msvc-x86"
+    }
+  ],
+  "version": 4
+}

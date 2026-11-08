@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Play POWDER (Release)",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/port/windows/Release/Powder.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/port/windows/Release",
+      "console": "externalTerminal",
+      "preLaunchTask": "Build Game (Release)"
+    }
+  ]
+}

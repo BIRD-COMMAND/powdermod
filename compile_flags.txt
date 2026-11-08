@@ -1,0 +1,8 @@
+-DWIN32
+-D_CRT_SECURE_NO_WARNINGS
+-I.
+-I./port/sdl
+-I./SDL-1.2.15/include
+-I../SDL-1.2.15/include
+-I/C:/SDL-1.2.15/include
+-Wno-narrowing
