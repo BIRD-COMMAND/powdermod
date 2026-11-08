@@ -16,3 +16,20 @@ gfx/all_bitmaps.h
 port/windows/Backup/
 port/windows/UpgradeLog*
 port/windows/_UpgradeReport_Files/
+
+# 5. Build Artifacts
+port/windows/Release/
+port/windows/Debug/
+gfx/akoi3x/sprite16_3x.bmp
+gfx/*.c
+gfx/*/*.c
+rooms/*.cpp
+rooms/*.h
+support/*/*.o
+.asset_checksum
+credits.cpp
+encyclopedia.cpp
+encyclopedia.h
+glbdef.cpp
+glbdef.h
+license.cpp
