@@ -33,3 +33,8 @@ encyclopedia.h
 glbdef.cpp
 glbdef.h
 license.cpp
+
+# User items
+.vscode/*.code-workspace
+.vscode/settings.json
+powder.sav
