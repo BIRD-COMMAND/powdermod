@@ -1,0 +1,35 @@
+<Project>
+  <PropertyGroup>
+    <!-- Automatically discover SDL-1.2.15 inside repo root, parent directory, or C:\ -->
+    <SdlDir Condition="'$(SdlDir)' == '' and Exists('$(ProjectDir)..\..\SDL-1.2.15')">$([System.IO.Path]::GetFullPath('$(ProjectDir)..\..\SDL-1.2.15'))</SdlDir>
+    <SdlDir Condition="'$(SdlDir)' == '' and Exists('$(ProjectDir)..\..\..\SDL-1.2.15')">$([System.IO.Path]::GetFullPath('$(ProjectDir)..\..\..\SDL-1.2.15'))</SdlDir>
+    <SdlDir Condition="'$(SdlDir)' == '' and Exists('C:\SDL-1.2.15')">C:\SDL-1.2.15</SdlDir>
+  </PropertyGroup>
+
+  <!-- Inject compiler and linker settings into all build configurations -->
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SdlDir)\include;$(ProjectDir)..\sdl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SdlDir)\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <!-- Automated Pre-Build: Runs asset verification before any source code compiles -->
+  <Target Name="PowderPreBuild" BeforeTargets="ClCompile">
+    <Exec Command="call &quot;$(ProjectDir)prebuild.bat&quot; &quot;$(ProjectDir)..\..&quot;" />
+  </Target>
+
+  <!-- Clean Hook: Deleting .asset_checksum guarantees a full asset rebuild on 'Rebuild Solution' -->
+  <Target Name="PowderCleanAssets" AfterTargets="Clean">
+    <Delete Files="$(ProjectDir)..\..\.asset_checksum" TreatErrorsAsWarnings="true" />
+  </Target>
+
+  <!-- Automated Post-Build: Stages SDL.dll into the build directory if missing -->
+  <Target Name="PowderPostBuild" AfterTargets="Link">
+    <Exec Command="call &quot;$(ProjectDir)postbuild.bat&quot; &quot;$(ProjectDir)..\..&quot; &quot;$(TargetDir)&quot;" />
+  </Target>
+</Project>

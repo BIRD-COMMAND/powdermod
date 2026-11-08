@@ -1,17 +1,18 @@
-# ====================================================================
-# POWDER 118 Baseline - Initial Exclusions
-# ====================================================================
+# POWDER 118 Exclusions
 
-# 1. Ignore the pre-shipped Windows executables in support tools
-support/enummaker/enummaker.exe
-support/map2c/map2c.exe
+# 1. Executables (support tools & game binaries)
 *.exe
 
-# 2. Ignore pre-generated graphics code (rebuilt by gfx/rebuild.sh)
+# 2. Generated Graphics Pipeline (rebuilt by gfx/rebuild.sh)
 gfx/all_bitmaps.cpp
 gfx/all_bitmaps.h
 
-# 3. Prevent Visual Studio background caches if the IDE was opened
+# 3. Visual Studio Caches & Per-User Files (any depth)
 .vs/
 *.user
 *.suo
+
+# 4. Visual Studio Migration & Upgrade Artifacts (strictly scoped to port/windows)
+port/windows/Backup/
+port/windows/UpgradeLog*
+port/windows/_UpgradeReport_Files/
