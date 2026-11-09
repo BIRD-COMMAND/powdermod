@@ -19,7 +19,7 @@
         "panel": "shared",
         "focus": false,
         "clear": false,
-        "showReuseMessage": false,
+        "showReuseMessage": false
       }
     },
     {
@@ -27,7 +27,43 @@
       "type": "process",
       "command": "${workspaceFolder}\\port\\windows\\Release\\Powder.exe",
       "dependsOn": "Build Game (Release)",
-      "problemMatcher": [],
+      "problemMatcher": []
+    },
+    {
+      "label": "Clear Generated Assets",
+      "type": "shell",
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "clear_generated_items.bat"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false,
+        "clear": false,
+        "showReuseMessage": true,
+        "close": true,
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Clear Generated Assets & Build Tools",
+      "type": "shell",
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "clear_generated_items.bat -a"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false,
+        "clear": false,
+        "showReuseMessage": true,
+        "close": true,
+      },
+      "problemMatcher": []
     }
   ]
 }
